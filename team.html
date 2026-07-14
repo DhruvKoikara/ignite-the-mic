@@ -7,37 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
   <style>
-    .team-section-label {
-      font-size: 0.72rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .team-section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: rgba(255,255,255,0.08);
-    }
-
-    .leads-grid {
+    .team-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.75rem;
-      margin-bottom: 3rem;
-      max-width: 680px;
-    }
-
-    .support-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
+      margin-top: 2.5rem;
     }
 
     .team-card {
@@ -57,9 +31,7 @@
       transform: translateY(-3px);
     }
 
-    .team-card:hover .team-hover-overlay {
-      opacity: 1;
-    }
+    .team-card:hover .team-hover-overlay { opacity: 1; }
 
     .team-hover-overlay {
       position: absolute;
@@ -69,7 +41,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 1.25rem;
+      padding: 1.5rem;
       opacity: 0;
       transition: opacity 0.25s;
       border-radius: 12px;
@@ -93,12 +65,6 @@
       color: rgba(141,0,52,0.35);
     }
 
-    .lead-card .team-photo-placeholder {
-      width: 100px;
-      height: 100px;
-      font-size: 2rem;
-    }
-
     .team-card h3 { font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem; }
 
     .team-role {
@@ -111,29 +77,14 @@
       margin-bottom: 0.6rem;
     }
 
-    .lead-card .team-role { color: var(--yellow); }
+    .team-card:nth-child(3n+1) .team-role { color: var(--red); }
+    .team-card:nth-child(3n+2) .team-role { color: var(--orange); }
+    .team-card:nth-child(3n+3) .team-role { color: var(--blue); }
 
-    .team-bio {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .team-bio { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
 
-    .support-card .team-photo-placeholder {
-      width: 72px;
-      height: 72px;
-      font-size: 1.4rem;
-    }
-
-    .support-card h3 { font-size: 0.875rem; }
-
-    @media (max-width: 900px) {
-      .support-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 640px) {
-      .leads-grid { grid-template-columns: 1fr; max-width: 320px; }
-      .support-grid { grid-template-columns: repeat(2, 1fr); }
-    }
+    @media (max-width: 768px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .team-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -160,11 +111,9 @@
     </div>
 
     <div class="section">
+      <div class="team-grid">
 
-      <!-- LEADS -->
-      <div class="team-section-label" style="color:var(--yellow)">Leadership</div>
-      <div class="leads-grid">
-        <div class="team-card lead-card">
+        <div class="team-card">
           <div class="team-photo-placeholder">👤</div>
           <h3>Mahima Menon</h3>
           <p class="team-role">Founder</p>
@@ -175,7 +124,8 @@
             <p>Bio coming soon.</p>
           </div>
         </div>
-        <div class="team-card lead-card">
+
+        <div class="team-card">
           <div class="team-photo-placeholder">👤</div>
           <h3>Dhruv Koikara</h3>
           <p class="team-role">Web Development Lead</p>
@@ -186,51 +136,115 @@
             <p>Hi, I'm Dhruv. I joined this initiative to help those battling cancer and to use my skills for a cause larger than myself.</p>
           </div>
         </div>
-      </div>
 
-      <!-- SUPPORTING -->
-      <div class="team-section-label" style="color:var(--blue)">Supporting Team</div>
-      <div class="support-grid">
-        <div class="team-card support-card">
+        <div class="team-card">
           <div class="team-photo-placeholder">👤</div>
           <h3>Name</h3>
           <p class="team-role">Role / Title</p>
+          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Name</h3>
             <div class="role">Role / Title</div>
             <p>Bio coming soon.</p>
           </div>
         </div>
-        <div class="team-card support-card">
+
+        <div class="team-card">
           <div class="team-photo-placeholder">👤</div>
           <h3>Name</h3>
           <p class="team-role">Role / Title</p>
+          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Name</h3>
             <div class="role">Role / Title</div>
             <p>Bio coming soon.</p>
           </div>
         </div>
-        <div class="team-card support-card">
+
+        <div class="team-card">
           <div class="team-photo-placeholder">👤</div>
           <h3>Name</h3>
           <p class="team-role">Role / Title</p>
+          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Name</h3>
             <div class="role">Role / Title</div>
             <p>Bio coming soon.</p>
           </div>
         </div>
-        <div class="team-card support-card">
+
+        <div class="team-card">
           <div class="team-photo-placeholder">👤</div>
           <h3>Name</h3>
           <p class="team-role">Role / Title</p>
+          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Name</h3>
             <div class="role">Role / Title</div>
             <p>Bio coming soon.</p>
           </div>
         </div>
+
+        <div class="team-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Name</h3>
+          <p class="team-role">Role / Title</p>
+          <p class="team-bio">Bio coming soon.</p>
+          <div class="team-hover-overlay">
+            <h3>Name</h3>
+            <div class="role">Role / Title</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Name</h3>
+          <p class="team-role">Role / Title</p>
+          <p class="team-bio">Bio coming soon.</p>
+          <div class="team-hover-overlay">
+            <h3>Name</h3>
+            <div class="role">Role / Title</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Name</h3>
+          <p class="team-role">Role / Title</p>
+          <p class="team-bio">Bio coming soon.</p>
+          <div class="team-hover-overlay">
+            <h3>Name</h3>
+            <div class="role">Role / Title</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Name</h3>
+          <p class="team-role">Role / Title</p>
+          <p class="team-bio">Bio coming soon.</p>
+          <div class="team-hover-overlay">
+            <h3>Name</h3>
+            <div class="role">Role / Title</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Name</h3>
+          <p class="team-role">Role / Title</p>
+          <p class="team-bio">Bio coming soon.</p>
+          <div class="team-hover-overlay">
+            <h3>Name</h3>
+            <div class="role">Role / Title</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
