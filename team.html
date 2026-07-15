@@ -15,18 +15,18 @@
     }
 
     .team-card {
-      background: var(--dark3);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: var(--white);
+      border: 1px solid var(--card-border);
       border-radius: 12px;
       padding: 1.75rem 1.25rem;
       text-align: center;
       position: relative;
       overflow: hidden;
-      transition: border-color 0.25s, transform 0.25s;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
       cursor: default;
     }
 
-    .team-card:hover { border-color: rgba(141,0,52,0.4); transform: translateY(-3px); }
+    .team-card:hover { border-color: rgba(141,0,52,0.3); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
     .team-card:hover .team-hover-overlay { opacity: 1; }
 
     .team-hover-overlay {
@@ -44,8 +44,8 @@
     }
 
     .team-hover-overlay h3 { color: #fff; font-size: 0.95rem; margin-bottom: 0.3rem; }
-    .team-hover-overlay .role { color: rgba(255,255,255,0.7); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; font-family: 'Poppins', sans-serif; font-weight: 600; }
-    .team-hover-overlay p { color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.6; }
+    .team-hover-overlay .role { color: rgba(255,255,255,0.75); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; font-family: 'Poppins', sans-serif; font-weight: 600; }
+    .team-hover-overlay p { color: rgba(255,255,255,0.88); font-size: 0.82rem; line-height: 1.6; }
 
     .team-photo {
       width: 90px;
@@ -54,26 +54,27 @@
       object-fit: cover;
       display: block;
       margin: 0 auto 1rem;
-      border: 2px solid rgba(141,0,52,0.4);
+      border: 3px solid var(--grey);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
 
     .team-photo-placeholder {
       width: 90px;
       height: 90px;
       border-radius: 50%;
-      background: var(--dark4);
-      border: 2px dashed rgba(141,0,52,0.35);
+      background: var(--grey);
+      border: 2px dashed var(--grey-darker);
       margin: 0 auto 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.2);
+      font-size: 0.65rem;
+      color: var(--muted-text);
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .team-card h3 { font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem; }
+    .team-card h3 { font-size: 0.95rem; color: var(--dark-text); margin-bottom: 0.2rem; }
 
     .team-role {
       font-size: 0.7rem;
@@ -88,11 +89,11 @@
     .team-card:nth-child(3n+2) .team-role { color: var(--orange); }
     .team-card:nth-child(3n+3) .team-role { color: var(--blue); }
 
-    .team-bio { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+    .team-bio { font-size: 0.82rem; color: var(--muted-text); line-height: 1.6; }
 
     @media (max-width: 768px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .team-grid { grid-template-columns: 1fr; } }
-  </style>
+</style>
 </head>
 <body>
   <nav>
@@ -130,14 +131,15 @@
           </div>
         </div>
 
+        <!-- me -->
         <div class="team-card">
-          <img src="dhruv.jpg" alt="Dhruv Koikara" class="team-photo" />
+          <div class="team-photo-placeholder">Photo</div>
           <h3>Dhruv Koikara</h3>
           <p class="team-role">Web Development Lead</p>
           <div class="team-hover-overlay">
             <h3>Dhruv Koikara</h3>
             <div class="role">Web Development Lead</div>
-            <p>Hi, I'm Dhruv. I joined this initiative to help those battling cancer and to use my skills in a movement I believe in, coding for a cause.</p>
+            <p>Hi, I'm Dhruv. I joined this initiative to help those battling cancer and to use my skills for a cause larger than myself.</p>
           </div>
         </div>
 
@@ -174,6 +176,7 @@
           </div>
         </div>
 
+        <!-- palyamos -->
         <div class="team-card">
           <img src="aditya.jpg" alt="Aditya Palyam" class="team-photo" />
           <h3>Aditya Palyam</h3>
